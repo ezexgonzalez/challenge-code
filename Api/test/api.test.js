@@ -26,7 +26,8 @@ describe("GET /iecho", ()=>{
             .expect("Content-Type", /json/)
             .expect(200)
             .expect({
-                text: "tset"
+                text: "tset",
+                palindrome: false
             })
             .end(done)
     });
@@ -60,7 +61,7 @@ describe("GET /iecho", ()=>{
 
 // Testing Tools
 
-const exampleText = invertText("test");
+const exampleText = invertText("test").text;
 
 describe("Invert text function",()=>{
     it("Return a string", ()=>{
